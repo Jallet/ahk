@@ -139,14 +139,14 @@ Return
 Send, ~
 Return
 
-;map CapsLock=hjkl into left, down, up, right, the same as vim style
+;map CapsLock+hjkl into left, down, up, right, the same as vim style
 CapsLock & h::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
 		Send, {Left}
 	else
-		Send, +^{Left}
+		Send, !^{Left}
 	Return
 }
 
@@ -156,7 +156,7 @@ if GetKeyState("control") = 0
 	if GetKeyState("alt") = 0
 		Send, {Down}
 	else
-		Send, +^{Down}
+		Send, !^{Down}
 	Return
 }
 
@@ -166,7 +166,7 @@ if GetKeyState("control") = 0
 	if GetKeyState("alt") = 0
 		Send, {Up}
 	else
-		Send, +^{Up}
+		Send, !^{Up}
 	Return
 }
 
@@ -199,6 +199,22 @@ if GetKeyState("control") = 0
 		Send, +{End}
 	Return
 }
+;map CapsLock+HJKL into Shift + {left, down, up, right}
+CapsLock & n::
+Send, +{Left}
+Return
+
+CapsLock & m::
+Send, +{Down}
+Return
+
+CapsLock & ,::
+Send, +{Up}
+Return
+
+CapsLock & .::
+Send, +{Right}
+Return
 
 ;transparent window
 a := 0
