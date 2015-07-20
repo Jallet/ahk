@@ -54,6 +54,10 @@ Return
 Send, jiangliang@qihai-inc.com
 Return
 
+:C*?:sv::
+Send, sudo vim
+Return
+
 ;map ;+lower case letter into corresponding upper case letter
 `; & q::
 Send, Q
