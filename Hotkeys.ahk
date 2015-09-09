@@ -58,10 +58,6 @@ Return
 Send, sudo vim
 Return
 
-:C*?:mtrup::
-Send, "&jfj02jl1","PJfu83js1)^"
-Return
-
 :C*?:psg::
 Send, ps -ef | grep
 Return
