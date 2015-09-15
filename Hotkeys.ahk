@@ -1,4 +1,4 @@
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+;#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
@@ -40,6 +40,10 @@ Return
 
 :C*?:ssm::
 Send, sudo service mysql
+Return
+
+:C*?:mongoteamie_testauth::
+Send, db.auth("rootabc","fjaj3rjksjda")
 Return
 
 :C*?:jgmail::
@@ -147,6 +151,82 @@ Return
 Send, ~
 Return
 
+`; & y::
+Send, Y
+Return
+
+`; & h::
+Send, H
+Return
+
+`; & n::
+Send, N
+Return
+
+`; & 6::
+Send, `^
+Return
+
+`; & 7::
+Send, &
+Return
+
+`; & u::
+Send, U
+Return
+
+`; & j::
+Send, J
+Return
+
+`; & m::
+Send, M
+Return
+
+`; & 8::
+Send, *
+Return
+
+`; & i::
+Send, I
+Return
+
+`; & k::
+Send, K
+Return
+
+`; & ,::
+Send, <
+Return
+
+`; & 9::
+Send, (
+Return
+
+`; & o::
+Send, O
+Return
+
+`; & l::
+Send, L
+Return
+
+`; & .::
+Send, >
+Return
+
+`; & 0::
+Send, )
+Return
+
+`; & p::
+Send, P
+Return
+
+`; & /::
+Send, ?
+Return
+
 ;map CapsLock+hjkl into left, down, up, right, the same as vim style
 CapsLock & h::
 if GetKeyState("control") = 0
@@ -224,6 +304,87 @@ CapsLock & .::
 Send, +{Right}
 Return
 
+' & a::
+Send, ^a
+Return
+
+' & s::
+Send, ^s
+Return
+
+' & c::
+Send, ^c
+Return
+
+' & v::
+Send, ^v
+Return
+
+' & x::
+Send, ^x
+Return
+
+' & b::
+Send, ^b
+Return
+
+' & w::
+Send, ^w
+Return
+
+' & r::
+Send, ^r
+Return
+
+' & t::
+Send, ^t
+Return
+
+' & d::
+Send, ^d
+Return
+
+' & f::
+Send, ^f
+Return
+
+' & z::
+Send, ^z
+Return
+
+' & q::
+Send, ^q
+Return
+
+' & 1::
+Send, ^1
+Return
+
+' & 2::
+Send, ^2
+Return
+
+' & 3::
+Send, ^3
+Return
+
+' & 4::
+Send, ^4
+Return
+
+' & 5::
+Send, ^5
+Return
+
+'::
+Send, '
+Return
+
++'::
+Send, "
+Return
+
+
 ;transparent window
 a := 0
 ^!j::
@@ -232,7 +393,7 @@ if (T == "") {
 	WinSet, Transparent, 210, A
 }
 else {
-	a := T-20
+	a := T-10
 	if (a < 20) {
 		a := 20
 	}
@@ -246,7 +407,7 @@ winget, T, Transparent, A
 if (T == "") {
 	Return
 }
-a := T+20
+a := T+10
 if (a > 210) {
 	WinSet, Transparent, Off, A
 }
