@@ -267,11 +267,11 @@ Send, P
 Return
 
 CapsLock & [::
-Send, `{
+Send, {{}
 Return
 
 CapsLock & ]::
-Send, }
+Send, {}}
 Return
 
 CapsLock & h::
