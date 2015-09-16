@@ -32,14 +32,9 @@ Return
 Send, {;}
 Return
 
-
 ;map jf into Enter
 :C*?:mf::
 Send, {enter}
-Return
-
-:C*?:ssm::
-Send, sudo service mysql
 Return
 
 :C*?:mongoteamie_testauth::
@@ -227,8 +222,116 @@ Return
 Send, ?
 Return
 
-;map CapsLock+hjkl into left, down, up, right, the same as vim style
+CapsLock & 6::
+Send, {^}
+Return
+
+CapsLock & 7::
+Send, &
+Return
+
+CapsLock & 8::
+Send, *
+Return
+
+CapsLock & 9::
+Send, (
+Return
+
+CapsLock & 0::
+Send, )
+Return
+
+CapsLock & -::
+Send, _
+Return
+
+CapsLock & =::
+Send, {+}
+Return
+
+CapsLock & y::
+Send, Y
+Return
+
+CapsLock & u::
+Send, U
+Return
+
+CapsLock & i::
+Send, I
+Return
+
+CapsLock & o::
+Send, O
+Return
+
+CapsLock & p::
+Send, P
+Return
+
+CapsLock & [::
+Send, `{
+Return
+
+CapsLock & ]::
+Send, }
+Return
+
 CapsLock & h::
+Send, H
+Return
+
+CapsLock & j::
+Send, J
+Return
+
+CapsLock & k::
+Send, K
+Return
+
+CapsLock & l::
+Send, L
+Return
+
+CapsLock & `;::
+Send, :
+Return
+
+CapsLock & '::
+Send, "
+Return
+
+CapsLock & n::
+Send, N
+Return
+
+CapsLock & m::
+Send, M
+Return
+
+CapsLock & ,::
+Send, <
+Return
+
+CapsLock & .::
+Send, >
+Return
+
+CapsLock & /::
+Send, ?
+Return
+
+CapsLock & \::
+Send, |
+Return
+
+2::
+Send, 2
+Return
+
+;map CapsLock+hjkl into left, down, up, right, the same as vim style
+2 & h::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -238,7 +341,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-CapsLock & j::
+2 & j::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -248,7 +351,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-CapsLock & k::
+2 & k::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -258,7 +361,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-CapsLock & l::
+2 & l::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -268,7 +371,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-CapsLock & i::
+2 & i::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -278,7 +381,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-CapsLock & o::
+2 & o::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -288,19 +391,19 @@ if GetKeyState("control") = 0
 	Return
 }
 ;map CapsLock+HJKL into Shift + {left, down, up, right}
-CapsLock & n::
+2 & n::
 Send, +{Left}
 Return
 
-CapsLock & m::
+2 & m::
 Send, +{Down}
 Return
 
-CapsLock & ,::
+2 & ,::
 Send, +{Up}
 Return
 
-CapsLock & .::
+2 & .::
 Send, +{Right}
 Return
 
