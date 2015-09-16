@@ -53,10 +53,6 @@ Return
 Send, jiangliang@qihai-inc.com
 Return
 
-:C*?:sv::
-Send, sudo vim
-Return
-
 :C*?:psg::
 Send, ps -ef | grep
 Return
