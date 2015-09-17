@@ -322,10 +322,6 @@ CapsLock & \::
 Send, |
 Return
 
-2::
-Send, 2
-Return
-
 ;map CapsLock+hjkl into left, down, up, right, the same as vim style
 2 & h::
 if GetKeyState("control") = 0
@@ -386,21 +382,45 @@ if GetKeyState("control") = 0
 		Send, +{End}
 	Return
 }
-;map CapsLock+HJKL into Shift + {left, down, up, right}
-2 & n::
-Send, +{Left}
+;map d<letter> into d<letter>
+2::
+Send, 2
 Return
 
-2 & m::
-Send, +{Down}
+2 & 1::
+Send, 21
 Return
 
-2 & ,::
-Send, +{Up}
+2 & 3::
+Send, 23
 Return
 
-2 & .::
-Send, +{Right}
+2 & 4::
+Send, 24
+Return
+
+2 & 5::
+Send, 25
+Return
+
+2 & 6::
+Send, 26
+Return
+
+2 & 7::
+Send, 27
+Return
+
+2 & 8::
+Send, 28
+Return
+
+2 & 9::
+Send, 29
+Return
+
+2 & 0::
+Send, 20
 Return
 
 ' & a::
