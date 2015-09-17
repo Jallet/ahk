@@ -520,6 +520,6 @@ WinSet, Transparent, Off, A
 Return
 
 ;map shift+backspace to delete
-+Backspace::
+CapsLock & Backspace::
 Send, {Del}
 Return
