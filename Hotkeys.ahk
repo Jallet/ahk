@@ -37,7 +37,11 @@ Return
 Send, {enter}
 Return
 
-:C*?:mongoteamie_testauth::
+:C*?:mongorootauth::
+Send, db.auth("&jfj02jl1","PJfu83js1){^}")
+Return
+
+:C*?:mongorootabcauth::
 Send, db.auth("rootabc","fjaj3rjksjda")
 Return
 
