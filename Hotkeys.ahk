@@ -62,6 +62,59 @@ Send, ps -ef | grep
 Return
 
 ;map ;+lower case letter into corresponding upper case letter
+
+`; & `::
+Send, {~}
+Return
+
+`; & 1::
+Send, {!}
+Return
+
+`; & 2::
+Send, {@}
+Return
+
+`; & 3::
+Send, {#}
+Return
+
+`; & 4::
+Send, {$}
+Return
+
+`; & 5::
+Send, `%
+Return
+
+`; & 6::
+Send, {^}
+Return
+
+`; & 7::
+Send, &
+Return
+
+`; & 8::
+Send, *
+Return
+
+`; & 9::
+Send, (
+Return
+
+`; & 0::
+Send, )
+Return
+
+`; & -::
+Send, _
+Return
+
+`; & =::
+Send, {+}
+Return
+
 `; & q::
 Send, Q
 Return
@@ -74,12 +127,36 @@ Return
 Send, E
 Return
 
-`; & r::
-Send, R
-Return
-
 `; & t::
 Send, T
+Return
+
+`; & y::
+Send, Y
+Return
+
+`; & u::
+Send, U
+Return
+
+`; & i::
+Send, I
+Return
+
+`; & o::
+Send, O
+Return
+
+`; & p::
+Send, P
+Return
+
+`; & [::
+Send, {{}
+Return
+
+`; & ]::
+Send, {}}
 Return
 
 `; & a::
@@ -102,6 +179,30 @@ Return
 Send, G
 Return
 
+`; & h::
+Send, H
+Return
+
+`; & j::
+Send, J
+Return
+
+`; & k::
+Send, K
+Return
+
+`; & l::
+Send, L
+Return
+
+`; & `;::
+Send, :
+Return
+
+`; & '::
+Send, "
+Return
+
 `; & z::
 Send, Z
 Return
@@ -122,104 +223,52 @@ Return
 Send, B
 Return
 
-`; & 1::
-Send, {!}
-Return
-
-`; & 2::
-Send, @
-Return
-
-`; & 3::
-Send, {#}
-Return
-
-`; & 4::
-Send, $
-Return
-
-`; & 5::
-Send, `%
-Return
-
-`; & `::
-Send, ~
-Return
-
-`; & y::
-Send, Y
-Return
-
-`; & h::
-Send, H
-Return
-
 `; & n::
 Send, N
-Return
-
-`; & 6::
-Send, `^
-Return
-
-`; & 7::
-Send, &
-Return
-
-`; & u::
-Send, U
-Return
-
-`; & j::
-Send, J
 Return
 
 `; & m::
 Send, M
 Return
 
-`; & 8::
-Send, *
-Return
-
-`; & i::
-Send, I
-Return
-
-`; & k::
-Send, K
-Return
-
 `; & ,::
 Send, <
-Return
-
-`; & 9::
-Send, (
-Return
-
-`; & o::
-Send, O
-Return
-
-`; & l::
-Send, L
 Return
 
 `; & .::
 Send, >
 Return
 
-`; & 0::
-Send, )
-Return
-
-`; & p::
-Send, P
-Return
-
 `; & /::
 Send, ?
+Return
+
+`; & \::
+Send, |
+Return
+
+CapsLock & `::
+Send, {~}
+Return
+
+CapsLock & 1::
+Send, {!}
+Return
+
+CapsLock & 2::
+Send, {@}
+Return
+
+CapsLock & 3::
+Send, {#}
+Return
+
+CapsLock & 4::
+Send, {$}
+Return
+
+CapsLock & 5::
+Send, `%
 Return
 
 CapsLock & 6::
@@ -250,6 +299,22 @@ CapsLock & =::
 Send, {+}
 Return
 
+CapsLock & q::
+Send, Q
+Return
+
+CapsLock & w::
+Send, W
+Return
+
+CapsLock & e::
+Send, E
+Return
+
+CapsLock & t::
+Send, T
+Return
+
 CapsLock & y::
 Send, Y
 Return
@@ -278,6 +343,26 @@ CapsLock & ]::
 Send, {}}
 Return
 
+CapsLock & a::
+Send, A
+Return
+
+CapsLock & s::
+Send, S
+Return
+
+CapsLock & d::
+Send, D
+Return
+
+CapsLock & f::
+Send, F
+Return
+
+CapsLock & g::
+Send, G
+Return
+
 CapsLock & h::
 Send, H
 Return
@@ -300,6 +385,26 @@ Return
 
 CapsLock & '::
 Send, "
+Return
+
+CapsLock & z::
+Send, Z
+Return
+
+CapsLock & x::
+Send, X
+Return
+
+CapsLock & c::
+Send, C
+Return
+
+CapsLock & v::
+Send, V
+Return
+
+CapsLock & b::
+Send, B
 Return
 
 CapsLock & n::
