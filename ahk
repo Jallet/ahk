@@ -14,7 +14,7 @@ def push(params):
         return -1
     else:
         print 'pushing'
-        subprocess.Popen('echo -e ":C*:' + params[2] + '::' + params[3]
+        subprocess.Popen('echo -e ":C?*:' + params[2] + '::' + params[3]
                 + '" >> ' + ahk_path + '/' + ahk_file, shell = True)
         return 0
 
@@ -62,7 +62,6 @@ def list():
             break
 
 def restart_ahk():
-    subprocess.Popen('pkill AutoHotkey', shell = True)
     print 'Restarting AutoHotkey'
     subprocess.Popen('AutoHotkey /r ' + ahk_path + '/' + ahk_file + '&', shell = True)
     
