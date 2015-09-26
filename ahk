@@ -72,7 +72,7 @@ if __name__ == '__main__':
         os._exit(0)
     
     if len(sys.argv) <= 1:
-        print 'Usage: ahk [command] [param1, param2,...]'
+        print 'Usage: ahk [command] [param1, param2,...]\ncommand: push | pop | list'
         os._exit(0)
 
     if not cmp(sys.argv[1], 'push'):
