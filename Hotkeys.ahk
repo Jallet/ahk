@@ -127,6 +127,10 @@ Return
 Send, E
 Return
 
+`; & r::
+Send, R
+Return
+
 `; & t::
 Send, T
 Return
@@ -309,6 +313,10 @@ Return
 
 CapsLock & e::
 Send, E
+Return
+
+CapsLock & r::
+Send, R
 Return
 
 CapsLock & t::
