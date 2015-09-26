@@ -661,4 +661,5 @@ CapsLock & Backspace::
 Send, {Del}
 Return
 
-;;;;;Stack;;;;;Stack for push and pop maps, this block must be an the end of the file
+;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
+:C*:aa::bb
