@@ -72,7 +72,7 @@ if __name__ == '__main__':
         os._exit(0)
     
     if len(sys.argv) <= 1:
-        print 'Usage: ahk [command] [param1, param2,...]\ncommand: push | pop | list'
+        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | list'
         os._exit(0)
 
     if not cmp(sys.argv[1], 'push'):
@@ -83,4 +83,6 @@ if __name__ == '__main__':
         restart_ahk()
     elif not cmp(sys.argv[1], 'list'):
         list()
+    elif not cmp(sys.argv[1], 'restart') or not cmp(sys.argv[1], 'restart'):
+        restart_ahk()
 
