@@ -55,9 +55,10 @@ def list():
         if pattern != None:
             count = 0
             for j in range(len(lines) - 1, i, -1):
-                list = re.findall(':[a-z]+', lines[j])
-                if len(list) != 0:
-                    print '[' + str(count) + '] ' + list[0][1 : ] + '\t-->\t' + list[1][1 : ]
+                string = re.search(':C\?\*:.+::', lines[j]).group(0)
+                map_string = re.search('::.*', lines[j]).group(0)
+                if len(string) != 0 and len(map_string) != 0:
+                    print '[' + str(count) + '] ' + string[5 : -2] + '\t-->\t' + map_string[2 : ]
                     count = count + 1
             break
 
