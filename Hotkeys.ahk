@@ -432,7 +432,7 @@ Send, |
 Return
 
 ;map CapsLock+hjkl into left, down, up, right, the same as vim style
-2 & h::
+v & h::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -442,7 +442,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-2 & j::
+v & j::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -452,7 +452,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-2 & k::
+v & k::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -462,7 +462,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-2 & l::
+v & l::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -472,7 +472,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-2 & i::
+v & n::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -482,7 +482,7 @@ if GetKeyState("control") = 0
 	Return
 }
 
-2 & o::
+v & m::
 if GetKeyState("control") = 0
 {
 	if GetKeyState("alt") = 0
@@ -492,46 +492,167 @@ if GetKeyState("control") = 0
 	Return
 }
 ;map d<letter> into d<letter>
-2::
-Send, 2
+v::
+Send, v
 Return
 
-2 & 1::
-Send, 21
+v & `::
+Send, v`
 Return
 
-2 & 3::
-Send, 23
+v & 1::
+Send, v1
 Return
 
-2 & 4::
-Send, 24
+v & 2::
+Send, v2
 Return
 
-2 & 5::
-Send, 25
+v & 3::
+Send, v3
 Return
 
-2 & 6::
-Send, 26
+v & 4::
+Send, v4
 Return
 
-2 & 7::
-Send, 27
+v & 5::
+Send, v5
 Return
 
-2 & 8::
-Send, 28
+v & 6::
+Send, v6
 Return
 
-2 & 9::
-Send, 29
+v & 7::
+Send, v7
 Return
 
-2 & 0::
-Send, 20
+v & 8::
+Send, v8
 Return
 
+v & 9::
+Send, v9
+Return
+
+v & 0::
+Send, v0
+Return
+
+v & -::
+Send, v-
+Return
+
+v & =::
+Send, v=
+Return
+
+v & q::
+Send, vq
+Return
+
+v & w::
+Send, vw
+Return
+
+v & e::
+Send, ve
+Return
+
+v & r::
+Send, vr
+Return
+
+v & t::
+Send, vt
+Return
+
+v & y::
+Send, vy
+Return
+
+v & u::
+Send, vu
+Return
+
+v & i::
+Send, vi
+Return
+
+v & o::
+Send, vo
+Return
+
+v & p::
+Send, vp
+Return
+
+v & [::
+Send, v{{}
+Return
+
+v & ]::
+Send, v{}}
+Return
+
+v & a::
+Send, va
+Return
+
+v & s::
+Send, vs
+Return
+
+v & d::
+Send, vd
+Return
+
+v & f::
+Send, vf
+Return
+
+v & g::
+Send, vg
+Return
+
+v & `;::
+Send, v`;
+Return 
+
+v & '::
+Send, v'
+Return 
+
+v & z::
+Send, vz
+Return
+
+v & x::
+Send, vx
+Return
+
+v & c::
+Send, vc
+Return
+
+v & b::
+Send, vb
+Return
+
+v & ,::
+Send, v,
+Return
+
+v & .::
+Send, v.
+Return
+
+v & /::
+Send, v/
+Return
+
+;map '+<letter> into Ctrl-letter
 ' & a::
 Send, ^a
 Return
