@@ -37,14 +37,6 @@ Return
 Send, {enter}
 Return
 
-:C*?:mongorootauth::
-Send, db.auth("&jfj02jl1","PJfu83js1){^}")
-Return
-
-:C*?:mongorootabcauth::
-Send, db.auth("rootabc","fjaj3rjksjda")
-Return
-
 :C*?:jgmail::
 Send, jiangliang0811@gmail.com
 Return
@@ -662,4 +654,7 @@ Send, {Del}
 Return
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
-:C*:aa::bb
+:C?*:mongotestrootauth::db.auth("&jfj02jl1","PJfu83js1){^}")
+:C?*:mongotestrootabcauth::db.auth("rootabc","fjaj3rjksjda")
+:C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
+:C?*:mysqltestroot::mysql -uroot -pWeiyou1221
