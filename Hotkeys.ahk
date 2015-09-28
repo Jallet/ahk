@@ -496,6 +496,10 @@ v::
 Send, v
 Return
 
+^v::
+Send, ^v
+Return
+
 v & `::
 Send, v`
 Return
