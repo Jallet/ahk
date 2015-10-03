@@ -14,8 +14,9 @@ def push(params):
         return -1
     else:
         print 'pushing'
-        subprocess.Popen('echo -e ":C?*:' + params[2] + '::' + params[3]
+        child = subprocess.Popen('echo -e ":C?*:' + params[2] + '::' + params[3]
                 + '" >> ' + ahk_path + '/' + ahk_file, shell = True)
+        child.wait()
         return 0
 
 def pop(params):
@@ -33,17 +34,19 @@ def pop(params):
             print 'Usage of pop: ahk pop [int] [int]'
             return -1
         else:
-            subprocess.Popen('sed -i \'' + str(len(lines) - int(params[2])) + 'd\' ' 
+            child = subprocess.Popen('sed -i \'' + str(len(lines) - int(params[2])) + 'd\' ' 
                     + ahk_path + '/' + ahk_file, shell = True)
+            child.wait()
             return 0
     elif len(params) == 4:
         if not params[2].isdigit() or not params[3].isdigit():
             print 'Usage of pop: ahk pop [int] [int]'
             return -1
         else:
-            subprocess.Popen('sed -i \'' + str(len(lines) - int(params[3])) + ', ' 
+            child = subprocess.Popen('sed -i \'' + str(len(lines) - int(params[3])) + ', ' 
                     + str(len(lines) - int(params[2])) + 'd\' ' 
                     +  ahk_path + '/' + ahk_file, shell = True)
+            child.wait()
             return 0
 
 def list():
