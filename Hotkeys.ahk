@@ -656,6 +656,10 @@ v & /::
 Send, v/
 Return
 
+v & Space::
+Send, v{Space}
+Return
+
 ;map '+<letter> into Ctrl-letter
 ' & a::
 Send, ^a
@@ -783,3 +787,9 @@ Return
 :C?*:mongotestrootabcauth::db.auth("rootabc","fjaj3rjksjda")
 :C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
 :C?*:mysqltestroot::mysql -uroot -pWeiyou1221
+:C?*:openmycnf::sudo vim /etc/mysql/my.cnf
+:C?*:spl::show processlist;
+:C?*:spl::show processlist;
+:C?*:mysqlteststart::sudo mysqld &
+:C?*:mysqlteststop::mysqladmin -uroot -pWeiyou1221 shutdown
+:C?*:sgsl::show global status like '';
