@@ -69,13 +69,16 @@ def restart_ahk():
     print 'Restarting AutoHotkey'
     subprocess.Popen('AutoHotkey /r ' + ahk_path + '/' + ahk_file + '&', shell = True)
     
+def print_usage():
+        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | list'
+    
 if __name__ == '__main__':
     if ahk_path is None:
         print "Please set Environment AHK_HOME first"
         os._exit(0)
     
     if len(sys.argv) <= 1:
-        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | list'
+        print_usage()
         os._exit(0)
 
     if not cmp(sys.argv[1], 'push'):
@@ -88,4 +91,7 @@ if __name__ == '__main__':
         list()
     elif not cmp(sys.argv[1], 'restart') or not cmp(sys.argv[1], 'restart'):
         restart_ahk()
+    else:
+        print "Wrong command!!!"
+        print_usage()
 
