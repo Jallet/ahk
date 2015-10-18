@@ -783,13 +783,25 @@ Send, {Del}
 Return
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
-:C?*:mongotestrootauth::db.auth("&jfj02jl1","PJfu83js1){^}")
-:C?*:mongotestrootabcauth::db.auth("rootabc","fjaj3rjksjda")
 :C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
 :C?*:mysqltestroot::mysql -uroot -pWeiyou1221
 :C?*:openmycnf::sudo vim /etc/mysql/my.cnf
-:C?*:spl::show processlist;
-:C?*:spl::show processlist;
 :C?*:mysqlteststart::sudo mysqld &
 :C?*:mysqlteststop::mysqladmin -uroot -pWeiyou1221 shutdown
 :C?*:sgsl::show global status like '';
+:C?*:sss::show slave status\G;
+:C?*:mysqlbohaistart::sudo service mysql.server start
+:C?*:mysqlbohaistop::sudo service mysql.server stop
+:C?*:mysqlbohaistatus::sudo service mysql.server status
+:C?*:mongostestrootabc::db.auth("rootabc","fjaj3rjksjda")
+:C?*:mongostestroot::db.auth("&jfj02jl1","PJfu83js1){^}")
+:C?*:mongosbohairoot::db.auth("root", "kjalskdfj*Jasjdflkjq2l;k3jljkskajdfljsdf")
+:C?*:mongosbohaiteamie::db.auth("teamie", "asldkfj*kjsdflkzx,ncviyweqkrj123l;r9p8sdjf")
+:C?*:mongodbohairoot::db.auth("root", "q,.wemr213oiz923*(*LNY")
+:C?*:mongodtestroot::db.auth("root", "qihai")
+:C?*:mongodbohaistatusroot::mongostat  --port 17138 -uroot -p'q,.wemr213oiz923*(*LNY' --authenticationDatabase admin
+:C?*:mongodbohaistatusteamie::mongostat --port 17138 -uteamie -p'asldkfj*kjsdflkzx,ncviyweqkrj123l;r9p8sdjf' --authenticationDatabase teamie
+:C?*:spl::show processlist;
+:C?*:mysqlbohaireader::mysql -ureader -p'lkqwlEkFJl#kj12l;kj8dLKJ8jLKjlkj@lk#j'
+:C?*:enc::./crypto enc file 12308451234123
+:C?*:dec::./crypto dec encrypted_file 12308451234123
