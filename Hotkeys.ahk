@@ -17,13 +17,6 @@ CapsLock::
 Return
 #IfWinActive
 
-
-#IfWinActive ahk_class mintty
-CapsLock::
-	SendInput ^a
-Return
-#IfWinActive
-
 +;::
 Send, {:}
 Return
@@ -782,6 +775,28 @@ CapsLock & Backspace::
 Send, {Del}
 Return
 
+;map Windoows+jk to Windows+Down,Up
+#j::
+Send, #{Down}
+Return
+
+#k::
+Send, #{Up}
+Return
+
+;map Windows+w to Alt+F4
+#W::
+Send, !{F4}
+Return
+
+;map Ctrl+Alt+b to open babun
+babun_path=C:/Users/Liang\ Jiang/.babun/cygwin/usr/local/bin/babun
+^!b::
+#IfWinExist ahk_class mintty
+WinActivate ahk_class mintty
+#IfWinExist
+Return
+
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
 :C?*:mysqltestroot::mysql -uroot -pWeiyou1221
@@ -806,3 +821,4 @@ Return
 :C?*:checkoutconfig::git checkout conf/log4j_test.properties conf/teamie_server_config_test.yaml teamie-server-release
 :C?*:releasebeijing::./teamie-server-release beijing1
 :C?*:jllastlongfeed::select * from t_feed where feed_type = 4 and user_id = 75 order by create_time desc limit 1\G;
+:C?*:numusers::select count(*) from t_user;
