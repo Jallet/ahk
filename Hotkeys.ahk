@@ -782,6 +782,15 @@ CapsLock & Backspace::
 Send, {Del}
 Return
 
+;map Windoows+jk to Windows+Down,Up
+#j::
+Send, #{Down}
+Return
+
+#k::
+Send, #{Up}
+Return
+
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
 :C?*:mysqltestroot::mysql -uroot -pWeiyou1221
@@ -802,6 +811,4 @@ Return
 :C?*:mongodbohaistatusroot::mongostat  --port 17138 -uroot -p'q,.wemr213oiz923*(*LNY' --authenticationDatabase admin
 :C?*:mongodbohaistatusteamie::mongostat --port 17138 -uteamie -p'asldkfj*kjsdflkzx,ncviyweqkrj123l;r9p8sdjf' --authenticationDatabase teamie
 :C?*:spl::show processlist;
-:C?*:mysqlbohaireader::mysql -ureader -p'lkqwlEkFJl#kj12l;kj8dLKJ8jLKjlkj@lk#j'
-:C?*:enc::./crypto enc file 12308451234123
-:C?*:dec::./crypto dec encrypted_file 12308451234123
+:C?*:numusers::select count(*) from t_user;
