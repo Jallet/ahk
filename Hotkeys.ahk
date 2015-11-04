@@ -17,13 +17,6 @@ CapsLock::
 Return
 #IfWinActive
 
-
-#IfWinActive ahk_class mintty
-CapsLock::
-	SendInput ^a
-Return
-#IfWinActive
-
 +;::
 Send, {:}
 Return
@@ -789,6 +782,19 @@ Return
 
 #k::
 Send, #{Up}
+Return
+
+;map Windows+w to Alt+F4
+#W::
+Send, !{F4}
+Return
+
+;map Ctrl+Alt+b to open babun
+babun_path=C:/Users/Liang\ Jiang/.babun/cygwin/usr/local/bin/babun
+^!b::
+#IfWinExist ahk_class mintty
+WinActivate ahk_class mintty
+#IfWinExist
 Return
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
