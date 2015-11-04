@@ -49,7 +49,7 @@ def pop(params):
             child.wait()
             return 0
 
-def list():
+def list_stack():
 #list all map in the stack
     file = open(ahk_path + '/' + ahk_file, 'r')
     lines = file.readlines()
@@ -70,7 +70,7 @@ def restart_ahk():
     subprocess.Popen('AutoHotkey /r ' + ahk_path + '/' + ahk_file + '&', shell = True)
     
 def print_usage():
-        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | list'
+        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | stack'
     
 if __name__ == '__main__':
     if ahk_path is None:
@@ -87,8 +87,8 @@ if __name__ == '__main__':
     elif not cmp(sys.argv[1], 'pop'):
         pop(sys.argv)
         restart_ahk()
-    elif not cmp(sys.argv[1], 'list'):
-        list()
+    elif not cmp(sys.argv[1], 'stack'):
+        list_stack()
     elif not cmp(sys.argv[1], 'restart') or not cmp(sys.argv[1], 'restart'):
         restart_ahk()
     else:
