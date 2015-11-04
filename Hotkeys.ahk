@@ -803,5 +803,6 @@ Return
 :C?*:mongodbohaistatusteamie::mongostat --port 17138 -uteamie -p'asldkfj*kjsdflkzx,ncviyweqkrj123l;r9p8sdjf' --authenticationDatabase teamie
 :C?*:spl::show processlist;
 :C?*:mysqlbohaireader::mysql -ureader -p'lkqwlEkFJl#kj12l;kj8dLKJ8jLKjlkj@lk#j'
-:C?*:enc::./crypto enc file 12308451234123
-:C?*:dec::./crypto dec encrypted_file 12308451234123
+:C?*:checkoutconfig::git checkout conf/log4j_test.properties conf/teamie_server_config_test.yaml teamie-server-release
+:C?*:releasebeijing::./teamie-server-release beijing1
+:C?*:jllastlongfeed::select * from t_feed where feed_type = 4 and user_id = 75 order by create_time desc limit 1\G;
