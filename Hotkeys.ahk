@@ -776,12 +776,23 @@ Send, {Del}
 Return
 
 ;map Windoows+jk to Windows+Down,Up
-#j::
+#y::
 Send, #{Down}
 Return
 
-#k::
+#o::
 Send, #{Up}
+Return
+
+;map Windows+jk to Mouse wheel down up
+#j::
+Loop, 5
+    MouseClick, WheelDown
+Return
+
+#k::
+Loop, 5
+    MouseClick, WheelUp
 Return
 
 ;map Windows+w to Alt+F4
