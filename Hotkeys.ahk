@@ -808,6 +808,22 @@ WinActivate ahk_class mintty
 #IfWinExist
 Return
 
+;map Ctrl+Win+Y to open Yixin
+^#y::
+#IfWinExist ahk_class SessionWindow
+WinActivate ahk_class SessionWindow
+#IfWinExist
+Return
+
+;map Ctrl+Win+HL to Ctrl+Win+{Left, Right}
+^#h::
+Send, ^#{Left}
+Return
+^#l::
+Send, ^#{Right}
+Return
+
+
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:mysqlbohairoot::mysql -uroot -p'alskjlJLjalkslajLKJ8*l{!}ama/3zjlkxaLj{^}&jl*'
 :C?*:mysqltestroot::mysql -uroot -pWeiyou1221
@@ -827,9 +843,9 @@ Return
 :C?*:mongodtestroot::db.auth("root", "qihai")
 :C?*:mongodbohaistatusroot::mongostat  --port 17138 -uroot -p'q,.wemr213oiz923*(*LNY' --authenticationDatabase admin
 :C?*:mongodbohaistatusteamie::mongostat --port 17138 -uteamie -p'asldkfj*kjsdflkzx,ncviyweqkrj123l;r9p8sdjf' --authenticationDatabase teamie
-:C?*:spl::show processlist;
 :C?*:mysqlbohaireader::mysql -ureader -p'lkqwlEkFJl#kj12l;kj8dLKJ8jLKjlkj@lk#j'
 :C?*:checkoutconfig::git checkout conf/log4j_test.properties conf/teamie_server_config_test.yaml teamie-server-release
 :C?*:releasebeijing::./teamie-server-release beijing1
 :C?*:jllastlongfeed::select * from t_feed where feed_type = 4 and user_id = 75 order by create_time desc limit 1\G;
 :C?*:numusers::select count(*) from t_user;
+:C?*:exrun::nohup matlab -r 'colorization_CNN' &
