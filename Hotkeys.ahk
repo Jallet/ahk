@@ -794,7 +794,10 @@ Return
 Loop, 5
     MouseClick, WheelUp
 Return
-
+;map #[ to mouse click
+#[::
+    Click
+Return
 ;map Windows+w to Alt+F4
 #W::
 Send, !{F4}
@@ -849,3 +852,4 @@ Return
 :C?*:jllastlongfeed::select * from t_feed where feed_type = 4 and user_id = 75 order by create_time desc limit 1\G;
 :C?*:numusers::select count(*) from t_user;
 :C?*:exrun::nohup matlab -r 'colorization_CNN' &
+:C?*:topj::top -u jiangliang
