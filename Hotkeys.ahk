@@ -828,4 +828,3 @@ Return
 
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
-:C?*:topj::top -u jiangliang
