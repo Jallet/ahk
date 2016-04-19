@@ -5,7 +5,7 @@ import re
 import subprocess
 import argparse
 
-ahk_path = "F:/software/ahk/"
+ahk_path = "D:/software/ahk/"
 ahk_file = 'Hotkeys.ahk'
 
 def push(args):
