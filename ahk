@@ -54,8 +54,6 @@ def stack(args):
 
 def restart(args):
     print 'Restarting AutoHotkey'
-    print ahk_path
-    print ahk_file
     subprocess.Popen('AutoHotkey /r ' + ahk_path + '/' + ahk_file + '&', shell = True)
 
 def argparser():
