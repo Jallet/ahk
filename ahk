@@ -1,55 +1,42 @@
 #!/usr/bin/env python
-
 import os
 import sys
 import re
 import subprocess
-ahk_path = os.environ.get("AHK_HOME")
+import argparse
+
+ahk_path = "F:/software/ahk/"
 ahk_file = 'Hotkeys.ahk'
 
-def push(params):
-#push
-    if len(params)!= 4:
-        print 'Wrong number of arguments for push'
-        return -1
-    else:
-        print 'pushing'
-        child = subprocess.Popen('echo -e ":C?*:' + params[2] + '::' + params[3]
-                + '" >> ' + ahk_path + '/' + ahk_file, shell = True)
-        child.wait()
-        return 0
+def push(args):
+    short_string = args.short_string
+    long_string = args.long_string
+    print 'pushing'
+    child = subprocess.Popen('echo -e ":C?*:' + short_string + '::' + long_string
+            + '" >> ' + ahk_path + '/' + ahk_file, shell = True)
+    child.wait()
+    restart(args)
+    return 0
 
-def pop(params):
-#pop the last map
+def pop(args):
+    start =args.start
+    end = args.end
+    if start > end:
+        print "Check failed, start_index must be smaller than end_index"
+        sys.exit()
     print 'poping'
-    if len(params) == 2:
-        subprocess.Popen('sed -i \'$d\' ' +  ahk_path + '/' + ahk_file, shell = True)
-        return 0
     
     file = open(ahk_path + '/' + ahk_file, 'r')
     lines = file.readlines()
-    
-    if len(params) == 3:
-        if not params[2].isdigit():
-            print 'Usage of pop: ahk pop [int] [int]'
-            return -1
-        else:
-            child = subprocess.Popen('sed -i \'' + str(len(lines) - int(params[2])) + 'd\' ' 
-                    + ahk_path + '/' + ahk_file, shell = True)
-            child.wait()
-            return 0
-    elif len(params) == 4:
-        if not params[2].isdigit() or not params[3].isdigit():
-            print 'Usage of pop: ahk pop [int] [int]'
-            return -1
-        else:
-            child = subprocess.Popen('sed -i \'' + str(len(lines) - int(params[3])) + ', ' 
-                    + str(len(lines) - int(params[2])) + 'd\' ' 
-                    +  ahk_path + '/' + ahk_file, shell = True)
-            child.wait()
-            return 0
 
-def list_stack():
+    child = subprocess.Popen('sed -i \'' + str(len(lines) - end) + ', ' 
+            + str(len(lines) - start) + 'd\' ' 
+                +  ahk_path + '/' + ahk_file, shell = True)
+    child.wait()
+    restart(args)
+    return 0
+
+def stack(args):
 #list all map in the stack
     file = open(ahk_path + '/' + ahk_file, 'r')
     lines = file.readlines()
@@ -65,33 +52,41 @@ def list_stack():
                     count = count + 1
             break
 
-def restart_ahk():
+def restart(args):
     print 'Restarting AutoHotkey'
+    print ahk_path
+    print ahk_file
     subprocess.Popen('AutoHotkey /r ' + ahk_path + '/' + ahk_file + '&', shell = True)
-    
-def print_usage():
-        print 'Usage: ahk [command] [param1, param2,...]\ncommand: start | stop | restart | push | pop | stack'
-    
+
+def argparser():
+    parser = argparse.ArgumentParser()
+    subparsers = parser.add_subparsers(help = 'sub-command help')
+    parser_push = subparsers.add_parser("push", help = "push a hot string")
+    parser_push.add_argument("short_string", help = "short string", action = "store")
+    parser_push.add_argument("long_string", help = "long string", action = "store")
+    parser_push.set_defaults(func = push)
+    parser_pop = subparsers.add_parser("pop", help = "pop a hot string")
+    parser_pop.add_argument("-s", "--start", help = "start index to pop", 
+            action = "store", type = int, default = 0)
+    parser_pop.add_argument("-e", "--end", help = "end index to pop", 
+            action = "store", type = int, default = 0)
+    parser_pop.set_defaults(func = pop)
+    parser_stack = subparsers.add_parser("stack", help = "stack ahk")
+    parser_stack.set_defaults(func = stack)
+    parser_restart = subparsers.add_parser("restart", help = "restart ahk")
+    parser_restart.set_defaults(func = restart)
+
+    return parser
+def main():
+    if os.path.exists(ahk_path) == False:
+        print ahk_path, " does not exist, please set it to where your Hotkey.ahk is"
+        sys.exit()
+    child = subprocess.Popen("export AHK_HOME=" + ahk_path, shell = True)
+    child.wait()
+    parser = argparser()
+    args = parser.parse_args()
+    print args
+    args.func(args)
+
 if __name__ == '__main__':
-    if ahk_path is None:
-        print "Please set Environment AHK_HOME first"
-        os._exit(0)
-    
-    if len(sys.argv) <= 1:
-        print_usage()
-        os._exit(0)
-
-    if not cmp(sys.argv[1], 'push'):
-        push(sys.argv)
-        restart_ahk()
-    elif not cmp(sys.argv[1], 'pop'):
-        pop(sys.argv)
-        restart_ahk()
-    elif not cmp(sys.argv[1], 'stack'):
-        list_stack()
-    elif not cmp(sys.argv[1], 'restart') or not cmp(sys.argv[1], 'restart'):
-        restart_ahk()
-    else:
-        print "Wrong command!!!"
-        print_usage()
-
+    main()
