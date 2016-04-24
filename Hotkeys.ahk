@@ -835,3 +835,12 @@ Return
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:listkeys::list-keys -t vi-copy
+:C?*:runrn::nohup src/solve_rn_cifar.sh > log/ResNet.log &
+:C?*:rundy::nohup src/solve_dyresnet.py > log/DyResNet.log &
+:C?*:runpn::nohup src/solve_pn_cifar.sh > log/PlainNet.log &
+:C?*:showrntrainloss::./src/show_figure.py results/loss/ResNet-cifar/ResNet-cifar-train-loss &
+:C?*:showdytrainloss::./src/show_figure.py results/loss/DyResNet-cifar/DyResNet-cifar-loss.train &
+:C?*:showpntrainloss::./src/show_figure.py results/loss/PlainNet-cifar/PlainNet-cifar-train-loss &
+:C?*:showdytestacc::./src/show_figure.py results/accuracy/DyResNet-cifar/DyResNet-cifar-acc.val &
+:C?*:showrntestacc::./src/show_figure.py results/accuracy/ResNet-cifar/ResNet-cifar-val-acc &
+:C?*:showpntestacc::./src/show_figure.py results/accuracy/PlainNet-cifar/PlainNet-cifar-val-acc &
