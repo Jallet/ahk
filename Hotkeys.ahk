@@ -17,6 +17,12 @@ CapsLock::
 Return
 #IfWinActive
 
+#IfWinActive ahk_class Xshell::MainFrame_0
+CapsLock::
+	SendInput ^a
+Return
+#IfWinActive
+
 +;::
 Send, {:}
 Return
@@ -828,3 +834,4 @@ Return
 
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
+:C?*:listkeys::list-keys -t vi-copy
