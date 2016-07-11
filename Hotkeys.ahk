@@ -8,8 +8,10 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 SetCapsLockState, AlwaysOff
 ;map CapsLock to Esc
 CapsLock::
-Send,{Esc}
+Send,{Shift}
 Return
+
+Shift::Ctrl
 
 #IfWinActive ahk_class VanDyke Software - SecureCRT
 CapsLock::
