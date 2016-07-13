@@ -12,6 +12,7 @@ Send,{Shift}
 Return
 
 Shift::Ctrl
+Ctrl::Shift
 
 #IfWinActive ahk_class VanDyke Software - SecureCRT
 CapsLock::
