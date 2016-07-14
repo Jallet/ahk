@@ -493,6 +493,15 @@ if GetKeyState("control") = 0
 		Send, +{End}
 	Return
 }
+
+v & y::
+  Send, {PgDn}
+Return
+
+v & p::
+  Send, {PgUp}
+Return
+
 ;map d<letter> into d<letter>
 v::
 Send, v
@@ -574,9 +583,9 @@ v & t::
 Send, vt
 Return
 
-v & y::
-Send, vy
-Return
+; v & y::
+; Send, vy
+; Return
 
 v & u::
 Send, vu
@@ -590,9 +599,9 @@ v & o::
 Send, vo
 Return
 
-v & p::
-Send, vp
-Return
+; v & p::
+; Send, vp
+; Return
 
 v & [::
 Send, v{{}
