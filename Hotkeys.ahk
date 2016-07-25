@@ -656,11 +656,11 @@ Send, vb
 Return
 
 v & ,::
-Send, v,
+Send, ^{Left}
 Return
 
 v & .::
-Send, v.
+Send, ^{Right}
 Return
 
 v & /::
