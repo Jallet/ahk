@@ -844,21 +844,6 @@ Return
 Send, ^#{Right}
 Return
 
-RButton::
-Send, {RButton}
-Return
-LButton::
-Send, {LButton}
-Return
-
-
-RButton & LButton::
-Send, ^#{Left}
-Return
-LButton & RButton::
-Send, ^#{Right}
-Return
-
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:listkeys::list-keys -t vi-copy
