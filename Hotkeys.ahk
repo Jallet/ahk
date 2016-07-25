@@ -830,7 +830,7 @@ WinActivate ahk_class mintty
 Return
 
 ;map Ctrl+Win+Y to open Yixin
-^#y::
+!y::
 #IfWinExist ahk_class SessionWindow
 WinActivate ahk_class SessionWindow
 #IfWinExist
