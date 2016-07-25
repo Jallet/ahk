@@ -632,11 +632,11 @@ Send, vg
 Return
 
 v & `;::
-Send, +{Left}
+Send, ^{Left}
 Return 
 
 v & '::
-Send, +{Right}
+Send, ^{Right}
 Return 
 
 v & z::
@@ -656,11 +656,11 @@ Send, vb
 Return
 
 v & ,::
-Send, ^{Left}
+Send, +{Left}
 Return
 
 v & .::
-Send, ^{Right}
+Send, +{Right}
 Return
 
 v & /::
