@@ -837,10 +837,10 @@ WinActivate ahk_class SessionWindow
 Return
 
 ;map Ctrl+Win+HL to Ctrl+Win+{Left, Right}
-^#h::
+!h::
 Send, ^#{Left}
 Return
-^#l::
+!l::
 Send, ^#{Right}
 Return
 
