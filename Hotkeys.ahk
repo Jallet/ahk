@@ -25,6 +25,11 @@ CapsLock::
 	SendInput ^a
 Return
 #IfWinActive
+#IfWinActive ahk_class Xshell::MainFrame_1
+CapsLock::
+	SendInput ^a
+Return
+#IfWinActive
 
 +;::
 Send, {:}
