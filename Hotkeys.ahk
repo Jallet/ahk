@@ -844,6 +844,10 @@ Return
 Send, ^#{Right}
 Return
 
+!v::
+Send, ^v
+Return
+
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:listkeys::list-keys -t vi-copy
