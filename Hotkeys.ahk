@@ -20,12 +20,7 @@ CapsLock::
 Return
 #IfWinActive
 
-#IfWinActive ahk_class Xshell::MainFrame_0
-CapsLock::
-	SendInput ^a
-Return
-#IfWinActive
-#IfWinActive ahk_class Xshell::MainFrame_1
+#IfWinActive ahk_exe Xshell.exe
 CapsLock::
 	SendInput ^a
 Return
