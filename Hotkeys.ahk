@@ -35,7 +35,7 @@ Send, {;}
 Return
 
 ;map jf into Enter
-:C*?:mf::
+:C*?:fm::
 Send, {enter}
 Return
 
