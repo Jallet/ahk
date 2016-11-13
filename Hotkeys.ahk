@@ -604,11 +604,11 @@ Return
 ; Return
 
 v & [::
-Send, v{{}
+Send, v{[}
 Return
 
 v & ]::
-Send, v{}}
+Send, v{]}
 Return
 
 v & a::
