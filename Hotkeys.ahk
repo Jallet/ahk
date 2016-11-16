@@ -793,7 +793,7 @@ CapsLock & Backspace::
 Send, {Del}
 Return
 
-;map Windoows+jk to Windows+Down,Up
+;map Windoows+yo to Windows+Down,Up
 #y::
 Send, #{Down}
 Return
@@ -812,6 +812,16 @@ Return
 Loop, 5
     MouseClick, WheelUp
 Return
+
+;map Windows+,. to move widow to the left or right screen
+#,::
+Send, #+{Left}
+Return
+
+#.::
+Send, #+{Right}
+Return
+
 ;map #[ to mouse click
 #[::
     Click
