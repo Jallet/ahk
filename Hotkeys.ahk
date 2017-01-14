@@ -20,6 +20,12 @@ CapsLock::
 Return
 #IfWinActive
 
+#IfWinActive ahk_class PuTTY
+CapsLock::
+	SendInput ^a
+Return
+#IfWinActive
+
 #IfWinActive ahk_class Xshell::MainFrame_0
 CapsLock::
 	SendInput ^a
@@ -831,6 +837,10 @@ Return
 Send, !{F4}
 Return
 
+#-:
+  Run https://translate.google.cn
+Return
+
 ;map Ctrl+Alt+b to open babun
 babun_path=C:/Users/Liang\ Jiang/.babun/cygwin/usr/local/bin/babun
 ^!b::
@@ -841,8 +851,8 @@ Return
 
 ;map Ctrl+Win+Y to open Yixin
 !y::
-#IfWinExist ahk_class SessionWindow
-WinActivate ahk_class SessionWindow
+#IfWinExist ahk_class SessionBoxWnd
+WinActivate ahk_class SessionBoxWnd
 #IfWinExist
 Return
 
