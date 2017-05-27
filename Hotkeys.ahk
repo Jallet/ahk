@@ -868,6 +868,20 @@ Return
 Send, ^v
 Return
 
+lock_id= -1
+^,::
+  WinGet, lock_id, ID, A 
+Return
+
+^.::
+  if (lock_id = -1) {
+    MsgBox, "No window is locked"
+  }
+  else {
+    WinActivate ahk_id %lock_id%
+  }
+Return
+
 
 ;;;;;;stack;;;;;;Stack for push and pop maps, this block must be an the end of the file
 :C?*:listkeys::list-keys -t vi-copy
