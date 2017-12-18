@@ -3,6 +3,9 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+MButton::
+  SendInput ^+p
+Return
 
 ;Switch off CapsLock
 SetCapsLockState, AlwaysOff
@@ -29,6 +32,12 @@ Return
 #IfWinActive ahk_class Xshell::MainFrame_0
 CapsLock::
 	SendInput ^a
+Return
+#IfWinActive
+
+#IfWinActive ahk_class ConsoleWindowClass
+CapsLock::
+  SendInput ^a
 Return
 #IfWinActive
 
@@ -837,7 +846,7 @@ Return
 Send, !{F4}
 Return
 
-#-:
+#-::
   Run https://translate.google.cn
 Return
 
