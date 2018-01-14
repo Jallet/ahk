@@ -11,15 +11,30 @@ Return
 SetCapsLockState, AlwaysOff
 ;map CapsLock to Esc
 CapsLock::
-Send,{Shift}
+  Send, {Shift}
 Return
 
-Shift::Ctrl
-Ctrl::Shift
+^CapsLock::
+Return
++CapsLock::
+Return
+!CapsLock::
+Return
+#CapsLock::
+Return
+CapsLock & Tab::
+Return
+
+Alt::Ctrl
+Ctrl::Alt
+
 
 #IfWinActive ahk_class VanDyke Software - SecureCRT
 CapsLock::
 	SendInput ^a
+Return
+Tab::
+  Send, ^a
 Return
 #IfWinActive
 
@@ -27,17 +42,26 @@ Return
 CapsLock::
 	SendInput ^a
 Return
+Tab::
+  Send, ^a
+Return
 #IfWinActive
 
 #IfWinActive ahk_class Xshell::MainFrame_0
 CapsLock::
 	SendInput ^a
 Return
+Tab::
+  Send, ^a
+Return
 #IfWinActive
 
 #IfWinActive ahk_class ConsoleWindowClass
 CapsLock::
   SendInput ^a
+Return
+Tab::
+  Send, ^a
 Return
 #IfWinActive
 
@@ -509,20 +533,27 @@ if GetKeyState("control") = 0
 	Return
 }
 
-v & y::
-  Send, {PgDn}
+v & u::
+  Send, {Backspace}
 Return
 
 v & p::
-  Send, {PgUp}
+  Send, {Del}
 Return
+
+v & y::
+  Send, {Tab}
+Return
+
+`; & Tab::AltTab
 
 ;map d<letter> into d<letter>
 v::
 Send, v
 Return
 
-^v::
+!v::
+MsgBox, "Alt v"
 Send, ^v
 Return
 
@@ -596,14 +627,6 @@ Return
 
 v & t::
 Send, vt
-Return
-
-; v & y::
-; Send, vy
-; Return
-
-v & u::
-Send, vu
 Return
 
 v & i::
@@ -873,9 +896,9 @@ Return
 Send, ^#{Right}
 Return
 
-!v::
-Send, ^v
-Return
+;Alt & v::
+;Send, ^v
+;Return
 
 lock_id= -1
 ^,::
