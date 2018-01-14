@@ -30,36 +30,24 @@ Ctrl::Alt
 
 
 #IfWinActive ahk_class VanDyke Software - SecureCRT
-CapsLock::
-	SendInput ^a
-Return
 Tab::
   Send, ^a
 Return
 #IfWinActive
 
 #IfWinActive ahk_class PuTTY
-CapsLock::
-	SendInput ^a
-Return
 Tab::
   Send, ^a
 Return
 #IfWinActive
 
 #IfWinActive ahk_class Xshell::MainFrame_0
-CapsLock::
-	SendInput ^a
-Return
 Tab::
   Send, ^a
 Return
 #IfWinActive
 
 #IfWinActive ahk_class ConsoleWindowClass
-CapsLock::
-  SendInput ^a
-Return
 Tab::
   Send, ^a
 Return
