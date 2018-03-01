@@ -9,49 +9,64 @@ Return
 
 ;Switch off CapsLock
 SetCapsLockState, AlwaysOff
+CapsLock::Tab
 ;map CapsLock to Esc
-CapsLock::
-  Send, {Shift}
-Return
+;CapsLock::
+;  Send, {Shift}
+;Return
 
-^CapsLock::
-Return
-+CapsLock::
-Return
-!CapsLock::
-Return
-#CapsLock::
-Return
-CapsLock & Tab::
+;^CapsLock::
+;Return
+;+CapsLock::
+;Return
+;!CapsLock::
+;Return
+;#CapsLock::
+;Return
+;CapsLock & Tab::
+;Return
+
+Tab::
+  GetKeyState, ctrl_state, Control, P
+  GetKeyState, shift_state, Shift, P
+  GetKeyState, alt_state, Alt, P
+  a="ctrl_state: "
+  b="shift_state: "
+  c="alt_state: "
+  if ctrl_state = D
+  {
+    if shift_state = D
+    {
+      Send, +^{Tab}
+    }
+    else
+    {
+      Send, ^{Tab}
+    }
+  }
+  else if alt_state = D
+  {
+    if shift_state = D
+    {
+      Send, +!{Tab}
+    }
+    else
+    {
+      Send, !{Tab}
+    }
+  }
+  else if WinActive("ahk_class VanDyke Software - SecureCRT") or WinActive("ahk_class PuTTY") or WinActive("ahk_class Xshell\:\:MainFrame_0") or WinActive("ahk_class ConsoleWindowClass")
+  {
+    Send, ^a
+  }
+  else
+  {
+    Send, {shift}
+  }
 Return
 
 Alt::Ctrl
 Ctrl::Alt
-
-
-#IfWinActive ahk_class VanDyke Software - SecureCRT
-Tab::
-  Send, ^a
-Return
-#IfWinActive
-
-#IfWinActive ahk_class PuTTY
-Tab::
-  Send, ^a
-Return
-#IfWinActive
-
-#IfWinActive ahk_class Xshell::MainFrame_0
-Tab::
-  Send, ^a
-Return
-#IfWinActive
-
-#IfWinActive ahk_class ConsoleWindowClass
-Tab::
-  Send, ^a
-Return
-#IfWinActive
 
 +;::
 Send, {:}
@@ -272,195 +287,195 @@ Return
 Send, |
 Return
 
-CapsLock & `::
+Tab & `::
 Send, {~}
 Return
 
-CapsLock & 1::
+Tab & 1::
 Send, {!}
 Return
 
-CapsLock & 2::
+Tab & 2::
 Send, {@}
 Return
 
-CapsLock & 3::
+Tab & 3::
 Send, {#}
 Return
 
-CapsLock & 4::
+Tab & 4::
 Send, {$}
 Return
 
-CapsLock & 5::
+Tab & 5::
 Send, `%
 Return
 
-CapsLock & 6::
+Tab & 6::
 Send, {^}
 Return
 
-CapsLock & 7::
+Tab & 7::
 Send, &
 Return
 
-CapsLock & 8::
+Tab & 8::
 Send, *
 Return
 
-CapsLock & 9::
+Tab & 9::
 Send, (
 Return
 
-CapsLock & 0::
+Tab & 0::
 Send, )
 Return
 
-CapsLock & -::
+Tab & -::
 Send, _
 Return
 
-CapsLock & =::
+Tab & =::
 Send, {+}
 Return
 
-CapsLock & q::
+Tab & q::
 Send, Q
 Return
 
-CapsLock & w::
+Tab & w::
 Send, W
 Return
 
-CapsLock & e::
+Tab & e::
 Send, E
 Return
 
-CapsLock & r::
+Tab & r::
 Send, R
 Return
 
-CapsLock & t::
+Tab & t::
 Send, T
 Return
 
-CapsLock & y::
+Tab & y::
 Send, Y
 Return
 
-CapsLock & u::
+Tab & u::
 Send, U
 Return
 
-CapsLock & i::
+Tab & i::
 Send, I
 Return
 
-CapsLock & o::
+Tab & o::
 Send, O
 Return
 
-CapsLock & p::
+Tab & p::
 Send, P
 Return
 
-CapsLock & [::
+Tab & [::
 Send, {{}
 Return
 
-CapsLock & ]::
+Tab & ]::
 Send, {}}
 Return
 
-CapsLock & a::
+Tab & a::
 Send, A
 Return
 
-CapsLock & s::
+Tab & s::
 Send, S
 Return
 
-CapsLock & d::
+Tab & d::
 Send, D
 Return
 
-CapsLock & f::
+Tab & f::
 Send, F
 Return
 
-CapsLock & g::
+Tab & g::
 Send, G
 Return
 
-CapsLock & h::
+Tab & h::
 Send, H
 Return
 
-CapsLock & j::
+Tab & j::
 Send, J
 Return
 
-CapsLock & k::
+Tab & k::
 Send, K
 Return
 
-CapsLock & l::
+Tab & l::
 Send, L
 Return
 
-CapsLock & `;::
+Tab & `;::
 Send, :
 Return
 
-CapsLock & '::
+Tab & '::
 Send, "
 Return
 
-CapsLock & z::
+Tab & z::
 Send, Z
 Return
 
-CapsLock & x::
+Tab & x::
 Send, X
 Return
 
-CapsLock & c::
+Tab & c::
 Send, C
 Return
 
-CapsLock & v::
+Tab & v::
 Send, V
 Return
 
-CapsLock & b::
+Tab & b::
 Send, B
 Return
 
-CapsLock & n::
+Tab & n::
 Send, N
 Return
 
-CapsLock & m::
+Tab & m::
 Send, M
 Return
 
-CapsLock & ,::
+Tab & ,::
 Send, <
 Return
 
-CapsLock & .::
+Tab & .::
 Send, >
 Return
 
-CapsLock & /::
+Tab & /::
 Send, ?
 Return
 
-CapsLock & \::
+Tab & \::
 Send, |
 Return
 
-;map CapsLock+hjkl into left, down, up, right, the same as vim style
+;map v+hjkl into left, down, up, right, the same as vim style
 v & h::
 if GetKeyState("control") = 0
 {
@@ -537,7 +552,15 @@ Return
 
 ;map d<letter> into d<letter>
 v::
+GetKeyState, alt_state, Alt, P
+if alt_state = D
+{
+  Send, ^v
+}
+else
+{
 Send, v
+}
 Return
 
 !v::
@@ -625,18 +648,6 @@ v & o::
 Send, vo
 Return
 
-; v & p::
-; Send, vp
-; Return
-
-v & [::
-Send, v{[}
-Return
-
-v & ]::
-Send, v{]}
-Return
-
 v & a::
 Send, va
 Return
@@ -688,6 +699,14 @@ Return
 v & .::
 Send, +{Right}
 Return
+
+v & [::
+  Send, +{Up}
+Return
+
+v & ]::
+  Send, +{Down}
+Return 
 
 v & /::
 Send, v/
@@ -769,6 +788,9 @@ Return
 ' & 5::
 Send, ^5
 Return
+' & Tab::
+  Send, ^{Tab}
+Return
 
 '::
 Send, '
@@ -815,7 +837,7 @@ WinSet, Transparent, Off, A
 Return
 
 ;map shift+backspace to delete
-CapsLock & Backspace::
+Tab & Backspace::
 Send, {Del}
 Return
 
