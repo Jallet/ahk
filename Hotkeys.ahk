@@ -516,36 +516,44 @@ if GetKeyState("control") = 0
 	Return
 }
 
+;v & n::
+;if GetKeyState("control") = 0
+;{
+;	if GetKeyState("alt") = 0
+;		Send, {Home}
+;	else
+;		Send, +{Home}
+;	Return
+;}
+
+;v & m::
+;if GetKeyState("control") = 0
+;{
+;	if GetKeyState("alt") = 0
+;		Send, {End}
+;	else
+;		Send, +{End}
+;	Return
+;}
+
 v & n::
-if GetKeyState("control") = 0
-{
-	if GetKeyState("alt") = 0
-		Send, {Home}
-	else
-		Send, +{Home}
-	Return
-}
+  Send, {Tab}
+Return
 
 v & m::
-if GetKeyState("control") = 0
-{
-	if GetKeyState("alt") = 0
-		Send, {End}
-	else
-		Send, +{End}
-	Return
-}
-
-v & u::
   Send, {Backspace}
 Return
 
-v & p::
+v & u::
   Send, {Del}
 Return
 
+v & p::
+  Send, {End}
+Return
+
 v & y::
-  Send, {Tab}
+  Send, {Home}
 Return
 
 `; & Tab::AltTab
